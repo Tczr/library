@@ -1,0 +1,62 @@
+header{
+    background: linear-gradient(180deg, #afafaf 5%, transparent);
+}
+header> nav{
+    gap: 90px;
+    padding: 1em 0;
+    align-items: center;   
+}
+header> nav .menue{
+    font-size: 1.56rem;
+    font-weight: 600;
+}
+
+header > nav > ul{
+    width: 25%;
+    list-style: none;
+}
+header > nav > ul > li{
+    display: inline-block;
+    margin-right: 1em;
+}
+
+header > nav > ul > li > a{
+    color: black;
+    text-decoration-thickness: 0px;
+    transition: text-decoration-thickness 1000ms ease;
+}
+header > nav > ul > li > a:hover{
+  
+    text-decoration-thickness: 2.5px;
+}
+
+header>nav> div:last-child{
+    margin-left: calc(100% / 2 - 250px);
+}
+
+header > .search-section{
+    padding: 1em 0;
+}
+.search-section>form.flex{
+    justify-content: center;
+    gap: 2%;
+}
+.search-section>form.flex>input{
+    padding: 0.8em 1em;
+    width: 50%;
+    outline: none;
+    border-radius: 0px;
+    background: none;
+    border: 2px solid black;
+}
+.search-section> form> button{
+    border: 2px solid black;
+    padding: 0.6em 1.2em;
+}
+.search-section> form> button:hover{
+    cursor: pointer;
+}
+.search-section> form> button:first-of-type{
+        background: black;
+        color: white;
+}

@@ -1,0 +1,46 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:"Fraunces";
+}
+a{
+    text-decoration: none;
+    color: initial;
+}
+body{
+    /* width: 900px; */
+    margin: 0 auto;
+}
+
+main>div,main>header, main>section, main>footer, main>nav, main>aside, main>article,
+body>header,body>section, body>div body>nav {
+    padding: 0 100px;
+}
+
+.pages>.page{
+    display: none;
+}
+
+section.page[data-active],div.page[data-active]{
+    display:block;
+}
+.flex{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+.s-1{
+    font-size: 1.1rem;
+}
+.s-2{
+    font-size: 1.2rem;
+}
+
+.bold{
+    font-weight: bold;
+}

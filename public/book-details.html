@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/style/header.css">
+    <link rel="stylesheet" href="../src/style/main.css">
+    <link rel="stylesheet" href="../src/style/review.css">
+</head>
+<body>
+    <header>
+        <nav class="hero-nav flex">
+            <div>
+                <span class="menue"><a href="index.html">Menue</a></span>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Store</a></li>
+            </ul>
+            <div>
+                <div>profile</div>
+                <div>
+                    <a href="./cart.html" >cart</a>
+                </div>
+            </div>
+        </nav>
+        <section class="search-section">
+            <form class="flex" action="">
+                <input class="search-input" type="text" name="searchInput"  placeholder="search for any key words or book title or aouther's name example 'Seince book'" >
+                <button>Search</button>
+                
+                <button>filter</button>
+            </form>
+        </section>
+        <!--page header contains: 
+            [
+                1.navigations & menue icon
+                2. profile icon
+                3. cart icon 
+                4. wish list icon OR history of shopping 
+                5. search section with more advanced features
+            ]
+
+        -->
+    </header>
+    <nav>
+        <a href="./index.html">shop</a> /
+        <span class="current-directory">directory</span>
+    </nav>
+    <main class="product-view">
+        <section class="image-section">
+            
+        </section>
+        
+        <section class="product-description">
+            <div>
+                <h1 id="title"><!-- book title -->title</h1>
+                <span class="aouther">aouther's name</span>
+                <p>
+                    <span class="s-2 bold">Breif</span>
+                    <span id="description">
+                        A Pargraph descriping the book’s content and gives the reader or the buyer a good overview of thi book
+                    </span>
+                </p>
+            </div>
+            <div class="icons">
+                <div>favoraite icon 150</div>
+                <div>saved icon 60</div>
+            </div>
+            <div class="addToCart-section">
+                <select id="avliable-quantity">
+                    <option value="1" selected >quantity : 1</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                </select>
+                <div>
+                    <div class="price">55$</div>
+                    <button class="add-btn">Add to cart</button>
+                </div>
+    
+            </div>
+            
+
+        </section>
+        
+        <section>
+            <ul>
+                <li>
+                    <img class="icon"  src="./images/hash.png">
+                    <p>#5 
+                        in human resources</p>
+                </li>
+                <li>
+                    <img class="icon"  src="./images/user.png">
+                    <p>+16</p>
+                </li>
+                <li>
+                    <img class="icon"  src="./images/hash.png">
+                    <p>h:45cm</p>
+                    <p>w:15cm</p>
+                </li>
+                <li>
+                    <img class="icon" src="./images/type.png">
+                    <p>paper book</p>
+                </li>
+                <li>
+                    <img class="icon"  src="./images/pages.png">
+                    <p>120 pages</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="../src/reviewBook.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+.books-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.book-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 250px;
+    height: 350px;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.book-picture{
+    height: 50%;
+}
+.book-picture>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.book-title{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.authoer, .book-title{
+    text-transform: uppercase;
+    /* margin: 1em 0; */
+}
+.authoer{
+    margin-bottom: 0.69em;
+    color: rgb(143, 143, 143);
+    letter-spacing: 1px;
+    font-size: 0.5rem;
+}
+.price, .card-footer>button{
+    font-size: 0.88rem;
+    padding: 0.5em;
+    flex-grow: 1;    
+}
+.price{
+    text-align: center;
+    border: 3px solid black;
+    font-weight: 700; 
+    width: 30%;   
+}
+.card-footer > button{
+    color: white;
+    background-color: black;
+    transition: background 700ms ease ,color 700ms ease, box-shadow 500ms ease-in;    
+}
+.card-footer> button:hover{
+    cursor: pointer;
+    background: none;
+    box-shadow: -5px 3px 0px 0px rgb(0, 0, 0);
+    border: 3px solid black;
+    border-left: 0px;
+    color: black;
+}
+.flex{
+    display: flex;
+}
