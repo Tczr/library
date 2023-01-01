@@ -12,7 +12,7 @@ form.addEventListener(
         // console.log(books)
         books.forEach(
             (value)=>{
-                const index = BoyerMoore(value.title,keywords);
+                const index = findMatch(value.title,keywords);
                 // console.log("keyword",keywords);
                 // console.log("how heigh does mathe:",strength)
                 if(index>=0){
