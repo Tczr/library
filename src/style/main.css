@@ -12,6 +12,7 @@ a{
 body{
     /* width: 900px; */
     margin: 0 auto;
+    background:white;
 }
 
 main>div,main>header, main>section, main>footer, main>nav, main>aside, main>article,
@@ -31,9 +32,11 @@ section.page[data-active],div.page[data-active]{
 }
 
 .hide{
-    display: none;
+    display: none; 
 }
-
+.display{
+    display: block;
+}
 .s-1{
     font-size: 1.1rem;
 }

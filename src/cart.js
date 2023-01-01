@@ -122,6 +122,9 @@ deleteButtons.forEach( (btn)=>
             }
             else return book;
        })
+       if(cart.totalElement==0){
+            cart.totalPrice=0;
+       }
         console.log(cart);
         // cart.books.splice(id,1);
         // cart.totalElement-=item.quantity;

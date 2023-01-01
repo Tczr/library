@@ -6,9 +6,9 @@ const bill=
 
 
 const books=[
-    {"authoer":"authoer's Name", title:"The One Book", imageUrl:"../public/images/World_history_book.jpg", price:132.98, quantity:10},
-    {"authoer":"authoer's Name", title:"The One Book", imageUrl:"../public/images/the_psychology_of_money.jpg", price:89, quantity:10},
-    {"authoer":"authoer's Name", title:"The One Book", imageUrl:"../public/images/The_science_book.jpg", price:99, quantity:10},
+    {id:0, "authoer":"authoer's Name", title:"The One Book Title", imageUrl:"../public/images/World_history_book.jpg", price:132.98, quantity:10},
+    {id:1, "authoer":"authoer's Name", title:"The One Book subtotation", imageUrl:"../public/images/the_psychology_of_money.jpg", price:89, quantity:10},
+    {id:2, "authoer":"authoer's Name", title:"The One Book fire", imageUrl:"../public/images/The_science_book.jpg", price:99, quantity:10},
 ]
 
 const cart = {
@@ -20,14 +20,24 @@ const cart = {
 localStorage.setItem("books",JSON.stringify(books));
 
 const bookSection = document.querySelector(".books-section");
-const items=JSON.parse(localStorage.getItem("cartItems") || "[]");
 
-displayBooks();
+
+displayBooks(books);
 
 bookSection.addEventListener('click',(ev)=>{
     console.log(ev);
+    let target = ev.target;
     let id=0;
-
+    while(
+        (target.className!=null && target.className!="card-footer")
+        &&
+        (target.className!=null && target.className!="book-card")){
+            // console.log(target.className);
+            // console.log(target.parentElement);
+            
+            target=target.parentElement;
+    }
+    console.log("target now:",target)
     if(ev.target.localName != "div"){
     id=ev.target.parentElement.parentElement.id;}
     
@@ -35,15 +45,36 @@ bookSection.addEventListener('click',(ev)=>{
         
         console.log("button clicked"," book #"+id, "added to cart");
         
-        cart.books.push({"bookId":id,"quantity":1});
+        const items=JSON.parse(localStorage.getItem("cartItems") || "[]");
 
+        console.log(items.books)
+        if(items.books!=undefined && items.books.length>0){
+            
+            cart.books=items.books;
+            cart.totalElement=items.totalElement;
+            cart.totalPrice=items.totalPrice;
 
-        cart.totalElement+=1;
-        cart.totalPrice+=books[id].price;
-        if(items.length>0 || items.books!=undefined){
-            cart.books.push(...items.books);
-            cart.totalElement+=items.totalElement;
-            cart.totalPrice+=items.totalPrice;
+            const index = items.books.findIndex(
+                book=> book.bookId==id
+                
+            )
+
+            if(index>-1){
+                cart.books[index].quantity+=1;
+            }
+            else{
+                cart.books.push({bookId:id,quantity:1})
+                
+            }
+            cart.totalElement+=1;
+            cart.totalPrice+=books[id].price;
+            // cart.totalElement+=items.totalElement;
+            // cart.totalPrice+=items.totalPrice;
+        }
+        else{
+            cart.books.push({bookId:id,quantity:1})
+            cart.totalElement+=1;
+            cart.totalPrice+=books[id].price;
         }
         console.log(cart,"=>",items.length);
         
@@ -52,7 +83,7 @@ bookSection.addEventListener('click',(ev)=>{
 
         // TODO: add carting features;
     }
-    else { // the card got clicked
+    else if(target.className=="book-card"){ // the card got clicked
         
         console.log("it's not a button")
         window.location.href="../public/book-details.html?book-id="+id;
@@ -60,7 +91,7 @@ bookSection.addEventListener('click',(ev)=>{
     }
     
 })
-function displayBooks(){
+function displayBooks(books){
     try{
         books.forEach(
             (element,index) => { 
