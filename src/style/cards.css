@@ -1,20 +1,23 @@
 .books-section{
     display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
     justify-content: space-evenly;
 }
 .book-card{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    max-width: 250px;
-    height: 350px;
-    width: 100%;
+    min-height: 250px;
+    max-width: 350px ;
+    width: 100%;;
     padding: 1em;
     border: 1px solid black;
     cursor: pointer;
 }
 .book-picture{
-    height: 50%;
+    max-height: 150px;
 }
 .book-picture>img{
     width: 100%;
@@ -61,4 +64,20 @@
 }
 .flex{
     display: flex;
+}
+
+@media (min-width:800px) {
+    .books-section{
+        flex-direction: row;
+    }
+    .book-card{
+        display: block;
+        max-width: 250px;
+    }
+    .book-picture{
+        max-width: 200px;
+    }
+    .book-picture>img{
+        height: 150px;
+    }
 }

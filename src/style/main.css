@@ -10,7 +10,7 @@ a{
     color: initial;
 }
 body{
-    /* width: 900px; */
+    /* max-width: 1000px; */
     margin: 0 auto;
     background:white;
 }
@@ -20,13 +20,8 @@ body>header,body>section, body>div body>nav {
     padding: 0 100px;
 }
 
-.pages>.page{
-    display: none;
-}
 
-section.page[data-active],div.page[data-active]{
-    display:block;
-}
+
 .flex{
     display: flex;
 }
